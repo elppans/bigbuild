@@ -30,4 +30,19 @@ package() {
     if [ -d "${InternalDir}/opt" ]; then
         cp -r "${InternalDir}/opt" "${pkgdir}/"
     fi
+    # MIME Files
+    mkdir -p "${pkgdir}/usr/share/mime/packages"
+    echo -e "<?xml version="1.0"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/vnd.debian.binary-package">
+    <comment>Debian Package</comment>
+    <sub-class-of type="application/x-deb"/>
+    <glob pattern="*.deb"/>
+    <icon name="application-x-debian-package"/>
+    <generic-icon name="package-x-generic"/>
+    <magic priority="50">
+      <match type="string" value="!&lt;arch&gt;!&lt;magic&gt;!&lt;archive&gt;debian-binary" offset="0"/>
+    </magic>
+  </mime-type>
+</mime-info>" > "${pkgdir}/usr/share/mime/packages/${pkgname}.xml"
 }
