@@ -7,6 +7,7 @@ pkgrel=1
 arch=('any')
 license=('GPL')
 depends=('yad' 'namcap' 'pamac' 'zenity' 'fakeroot')
+conflicts=('debtap')
 url="https://github.com/biglinux/debtap-mod"
 pkgdesc="Debtap mod and GUI script to convert and install .deb packages"
 source=("https://github.com/biglinux/debtap-mod/archive/refs/tags/debtap-mod-${_pkgver}.tar.gz")
