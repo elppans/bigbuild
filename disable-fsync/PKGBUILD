@@ -1,5 +1,5 @@
 # Maintainer: Bruno Goncalves <bigbruno@gmail.com>
-# Contributor: Elppans Dark Elven
+# Contributor: Mauricio de Lima <emauricio@uai21.com>
 
 pkgname=disable-fsync
 pkgver=23.07.17
